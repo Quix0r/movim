@@ -12,7 +12,7 @@ use Movim\Console\CompileLanguages;
 use Symfony\Component\Console\Application;
 
 $bootstrap = new Bootstrap;
-$bootstrap->boot($argv[1] == 'help');
+$bootstrap->boot(isset($argv[1]) && $argv[1] == 'help');
 
 $application = new Application;
 $application->add(new ConfigCommand);
